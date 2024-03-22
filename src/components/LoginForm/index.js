@@ -10,7 +10,19 @@ class LoginForm extends Component {
     password: '',
     showSubmitError: false,
     errorMsg: '',
+    credit: false,
   }
+
+  openDetails = () => {
+    this.setState(pre => ({credit: !pre.credit}))
+  }
+
+  loginDetails = () => (
+    <div>
+      <p>user-name: rahul</p>
+      <p>password: rahul@2021</p>
+    </div>
+  )
 
   onChangeUsername = event => {
     this.setState({username: event.target.value})
@@ -92,7 +104,7 @@ class LoginForm extends Component {
   }
 
   render() {
-    const {showSubmitError, errorMsg} = this.state
+    const {showSubmitError, errorMsg, credit} = this.state
     const jwtToken = Cookies.get('jwt_token')
 
     if (jwtToken !== undefined) {
@@ -123,6 +135,16 @@ class LoginForm extends Component {
             Login
           </button>
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+          <div>
+            <button
+              type="button"
+              className="login-button"
+              onClick={this.openDetails}
+            >
+              CREDENTIALS
+            </button>
+            {credit ? this.loginDetails() : ''}
+          </div>
         </form>
       </div>
     )
