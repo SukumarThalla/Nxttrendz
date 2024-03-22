@@ -1,183 +1,43 @@
-In this project, let's build a **Nxt Trendz - Cart Features** by applying the concepts we have learned till now.
+# Nxt Trendz
 
-### Refer to the video below:
+Nxt Trendz is an ecommerce platform built with ReactJS, utilizing local storage for data persistence and an external API for dynamic content. This platform offers a user-friendly interface for seamless browsing and purchasing experiences, akin to popular ecommerce platforms.
 
-<br/>
-<div style="text-align: center;">
-  <video style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-output.mp4" type="video/mp4">
-  </video>
-</div>
-<br/>
+## Getting Started
 
-### Design Files
+To use Nxt Trendz, follow these steps:
 
-<details>
-<summary>Click to view</summary>
+1. Clone the repository to your local machine using the command: `git clone https://github.com/SukumarThalla/Nxttrend.git`
+2. Install the necessary dependencies by running: `npm install`
+3. Start the local development server by running: `npm start`
+4. Explore the ecommerce platform, browse products, and make purchases.
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-lg-output.png)
+## Technology Stack
 
-</details>
+- **ReactJS**: A JavaScript library for building user interfaces.
+- **Local Storage**: Utilized for data persistence on the client-side.
+- **API**: An external API is integrated for fetching dynamic content.
+- **React Router DOM**: Implements client-side routing for a smoother navigation experience.
 
-### Set Up Instructions
+## Features
 
-<details>
-<summary>Click to view</summary>
+- User-friendly interface for efficient browsing and purchasing of products.
+- Local storage ensures a responsive and seamless user experience.
+- Integration with an external API for real-time product data.
+- Cart functionality for adding and removing items.
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## Routing
 
-### Completion Instructions
+Nxt Trendz uses [React Router DOM](https://reactrouter.com/web/guides/quick-start) for client-side routing. Different pages of the application are easily accessible through the navigation menu or direct URL input.
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+## Contributing
 
-The app must have the following functionalities
+Contributions to Nxt Trendz are encouraged! If you'd like to contribute, please follow these steps:
 
-- When an unauthenticated user tries to access the **Cart** Route, then the page should be navigated to **Login** Route
+1. Fork the repository to your account.
+2. Create a new branch for your changes.
+3. Implement your changes and ensure that the tests pass.
+4. Submit a pull request to merge your changes into the main branch.
 
-- Following are the features to be implemented
+## Live Demo
 
-  - Feature 1
-
-    - When an authenticated user tries to add the same product multiple times
-      - The quantity of the product should be updated accordingly, and the count of the cart items in the header should be remained same
-
-  - Feature 2
-
-    - The total amount and number of items in the cart should be displayed in the **Cart** Route
-
-  - Feature 3
-
-    - In each cart item in the cart
-      - When the plus icon is clicked, then the quantity of the product should be incremented by one
-      - When the minus icon is clicked, then the quantity of the product should be decremented by one
-      - When the quantity of the product is one and the minus icon is clicked, then the respective product should be removed from the cart
-      - Based on the quantity of the product, the product price and the Cart Summary, i.e the total cost should be updated accordingly
-
-  - Feature 4
-
-    - When an authenticated user clicks on the remove button, cart item should be removed from the cart list
-
-  - Feature 5
-
-    - When an authenticated user clicks on the **Remove All** button, all the cart items should be removed from the cart and [Empty Cart View](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-empty-cart-view.png) should be displayed
-
-- The `CartContext` has an object as a value with the following properties
-  - `cartList` - this key stores the cart items
-  - `removeAllCartItems` - this method is used to remove all the cart items in the `cartList`
-  - `addCartItem` - this method adds the cart item to the `cartList`
-  - `removeCartItem` - this method removes the cart item from the `cartList`
-  - `incrementCartItemQuantity` - this method increases the quantity of a product in the `cartList`
-  - `decrementCartItemQuantity` - this method decreases the quantity of a product in the `cartList`
-
-</details>
-
-<details>
-<summary>Components Structure</summary>
-
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-component-structure-breakdown.png" alt="component structure breakdown" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
-
-</details>
-
-<details>
-<summary>Implementation Files</summary>
-<br/>
-
-Use these files to complete the implementation:
-
-- `src/App.js`
-- `src/components/Cart/index.js`
-- `src/components/Cart/index.css`
-- `src/components/CartItem/index.js`
-- `src/components/CartItem/index.css`
-- `src/components/CartSummary/index.js`
-- `src/components/CartSummary/index.css`
-</details>
-
-### Quick Tips
-
-<details>
-<summary>Click to view</summary>
-<br>
-
-- The `line-height` CSS property sets the height of a line box. It's commonly used to set the distance between lines of text
-
-  ```
-  line-height: 1.5;
-  ```
-
-    <br/>
-    <img src="https://assets.ccbp.in/frontend/react-js/line-height-img.png" alt="line height" style="width:90%; max-width: 600px;"/>
-
-- The array method `find()` returns the first item's value that satisfies the provided testing function. If no item is found, it returns `undefined`
-
-  **Syntax**: `arr.find(Testing Function)`
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- `BsPlusSquare`, `BsDashSquare` icons from `react-icons` should be used for **plus** and **minus** buttons in cart item
-- The Cart Item should consist of two HTML button elements with data-testid attribute values as **plus** and **minus** respectively
-- `AiFillCloseCircle` icon from react-icons should be used for **remove** button in cartItem
-- The Cart Item should consist of an HTML button element with data-testid attribute values as **remove**
-- The product image in **Cart Item** Route should have the alt as `title` of the product
-
-- Prime User credentials
-
-  ```text
-   username: rahul
-   password: rahul@2021
-  ```
-
-- Non-Prime User credentials
-
-  ```text
-   username: raja
-   password: raja@2021
-  ```
-
-</details>
-
-### Resources
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #0b69ff; width: 150px; padding: 10px; color: white">Hex: #0b69ff</div>
-<div style="background-color: #171f46; width: 150px; padding: 10px; color: white">Hex: #171f46</div>
-<div style="background-color: #616e7c; width: 150px; padding: 10px; color: white">Hex: #616e7c</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+Check out the live demo of Nxt Trendz [here](https://sukumartrendz.ccbp.tech/).
